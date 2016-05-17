@@ -1,0 +1,155 @@
+.lay_out{
+    list-style: none;
+    position: relative;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.lay_out li{
+    box-sizing: border-box;
+    position: relative;
+}
+.lay_out li img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    vertical-align: middle;
+}
+/*拼图布局*/
+/*一张图片*/
+.puzzle_layout_1 li{
+    width: 100%;
+    height: 100%;
+}
+/*两张图片*/
+.puzzle_layout_2 li{
+    width: 100%;
+    height: 100%;
+}
+.puzzle_layout_2 li:nth-of-type(1){
+    -webkit-clip-path: polygon(0 0,66% 0,33% 100%,0 100%);
+    /*firefox*/
+    clip-path:url(Task051.svg#left_clip);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.puzzle_layout_2 li:nth-of-type(2){
+    -webkit-clip-path: polygon(66% 0,100% 0,100% 100%,33% 100%);
+    /*firefox*/
+    clip-path:url(Task051.svg#right_clip);
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+/*三张图片*/
+.puzzle_layout_3 li{
+    float: left;
+}
+.puzzle_layout_3 li:nth-of-type(1){
+    width: 66.7%;
+    height: 100%;
+}
+.puzzle_layout_3 li:nth-of-type(2),
+.puzzle_layout_3 li:nth-of-type(3){
+    height: 50%;
+    width: 33.3%;
+}
+/*四张图片*/
+.puzzle_layout_4 li{
+    width: 50%;
+    height: 50%;
+    float: left;
+}
+/*五张图片*/
+.puzzle_layout_5 li{
+    position: absolute;
+}
+.puzzle_layout_5 li:nth-of-type(1){
+    width: 66.6%;
+    height: 66.7%;
+    left: 0;
+    top: 0;
+}
+.puzzle_layout_5 li:nth-of-type(2),
+.puzzle_layout_5 li:nth-of-type(3){
+    height: 50%;
+    width: 33.4%;
+    right: 0;
+}
+.puzzle_layout_5 li:nth-of-type(2){
+    top: 0;
+}
+.puzzle_layout_5 li:nth-of-type(3){
+    bottom: 0;
+}
+.puzzle_layout_5 li:nth-of-type(4),
+.puzzle_layout_5 li:nth-of-type(5){
+    height: 33.3%;
+    width: 33.3%;
+}
+.puzzle_layout_5 li:nth-of-type(4){
+    left: 0;
+    bottom: 0;
+}
+.puzzle_layout_5 li:nth-of-type(5){
+    left: 33.3%;
+    bottom: 0;
+}
+/*六张图片*/
+.puzzle_layout_6 li{
+    float: left;
+}
+.puzzle_layout_6 li:nth-of-type(1){
+    width: 66.7%;
+    height: 66.6%;
+}
+.puzzle_layout_6 li:nth-of-type(2),
+.puzzle_layout_6 li:nth-of-type(3){
+    width: 33.3%;
+    height: 33.3%;
+}
+.puzzle_layout_6 li:nth-of-type(4),
+.puzzle_layout_6 li:nth-of-type(6){
+    width: 33.3%;
+    height: 33.4%;
+}
+.puzzle_layout_6 li:nth-of-type(5){
+    width: 33.4%;
+    height: 33.4%;
+}
+/*瀑布布局*/
+.waterfall_layout>div{
+    float: left;
+    box-sizing: border-box;
+}
+.waterfall_layout>div li{
+    height: 100%;
+}
+/*木桶布局*/
+.barrel_layout > div{
+    width: 100%;
+}
+.barrel_layout > div li{
+    float: left;
+    height: 100%;
+}
+/*遮罩层*/
+.mask_style{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.display_none{
+    display: none;
+}
+.display_flex{
+    display: flex;
+}
